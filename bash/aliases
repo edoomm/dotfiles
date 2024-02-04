@@ -1,0 +1,14 @@
+# Listing
+alias l='ls -CF'
+alias ls='ls --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+
+# Navigation
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+
+# Other
+alias grep='grep --color=auto'
+alias mkdir='mkdir -p'

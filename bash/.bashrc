@@ -5,8 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
+dfb_path="${HOME}/.dotfiles/bash"
+
+[[ -f $dfb_path/aliases ]] && source $dfb_path/aliases
 
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
