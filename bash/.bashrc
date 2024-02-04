@@ -19,6 +19,3 @@ setxkbmap latam
 # Mapping CAPS to CTRL
 setxkbmap -option ctrl:nocaps
 xcape -e 'Control_L=Escape'
-
-# vi mode on shell
-set -o vi
