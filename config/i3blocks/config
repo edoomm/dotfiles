@@ -1,0 +1,18 @@
+command=$SCRIPT_DIR/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+# Battery
+[battery]
+command=echo "$(cat /sys/class/power_supply/BAT0/capacity)%"
+interval=30
+
+# Weather
+[weather]
+command=curl wttr.in/Azcapotzalco?format=1
+interval=60
+
+# Date Time
+[time]
+command=date '+%m-%d %H:%M:%S'
+interval=1
