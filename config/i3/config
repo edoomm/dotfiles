@@ -242,3 +242,4 @@ bindsym Mod4+c exec --no-startup-id clipmenu
 
 # Commands on startup
 exec clipmenud
+exec redshift -P -O 3800
