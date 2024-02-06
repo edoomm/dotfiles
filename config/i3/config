@@ -31,7 +31,7 @@ set $mod Mod4
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
@@ -175,5 +175,9 @@ bindsym Mod4+Shift+S exec --no-startup-id "scrot '/tmp/%F_%T.png' -d 2 -e 'xclip
 bindsym $mod+c exec --no-startup-id clipmenu 
 
 # Commands on startup
+exec_always --no-startup-id setxkbmap latam
+exec_always --no-startup-id setxkbmap -option ctrl:nocaps
+exec_always --no-startup-id xcape -e 'Control_L=Escape'
+
 exec --no-startup-id clipmenud
 exec --no-startup-id redshift -P -O 3800
