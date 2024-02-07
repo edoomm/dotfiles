@@ -159,9 +159,10 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # Volume control
-bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -q sset Master 10%+"
-bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -q sset Master 10%-"
-bindsym XF86AudioMute exec --no-startup-id "amixer -q sset Master toggle"
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Lock screen
 bindsym XF86WebCam exec --no-startup-id i3lock -c 000000 -p win -e -f
