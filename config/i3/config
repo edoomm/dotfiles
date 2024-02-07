@@ -186,7 +186,7 @@ bindsym $mod+c exec --no-startup-id clipmenu
 # Commands on startup
 exec_always --no-startup-id setxkbmap latam
 exec_always --no-startup-id setxkbmap -option ctrl:nocaps
-exec_always --no-startup-id xcape -e 'Control_L=Escape'
+exec_always --no-startup-id killall xcape ; xcape -e 'Control_L=Escape'
 
 exec --no-startup-id clipmenud
 exec --no-startup-id redshift -P -O 3800
