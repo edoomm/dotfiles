@@ -1,3 +1,6 @@
+set $df_path /home/edev/.dotfiles
+set $scripts_dir /home/edev/.dotfiles/scripts
+
 font pango:DejaVu Sans Mono 9
 
 # Start XDG autostart .desktop files using dex. See also
@@ -130,7 +133,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' '/home/edev/.dotfiles/scripts/exiti3.sh'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' '$scripts_dir/exiti3.sh'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -184,9 +187,7 @@ bindsym Mod4+Shift+S exec --no-startup-id "scrot '/tmp/%F_%T.png' -d 2 -e 'xclip
 bindsym $mod+c exec --no-startup-id clipmenu 
 
 # Commands on startup
-exec_always --no-startup-id setxkbmap latam
-exec_always --no-startup-id setxkbmap -option ctrl:nocaps
-exec_always --no-startup-id killall xcape ; xcape -e 'Control_L=Escape'
+exec_always --no-startup-id $scripts_dir/ctrl2caps.sh
 
 exec --no-startup-id clipmenud
 exec --no-startup-id redshift -P -O 3800
