@@ -10,3 +10,4 @@ ln -fs "$df_path/bash/.bash_profile" "${HOME}/.bash_profile" \
 	&& ln -fs "$df_path/config/i3/config" "${HOME}/.config/i3/config" \
 	&& ln -fs "$df_path/config/i3blocks/config" "${HOME}/.config/i3blocks/config" \
 	&& ln -fs "$df_path/config/neofetch/config.conf" "${HOME}/.config/neofetch/config.conf"
+	&& ln -fs "$df_path/config/nvim/init.vim" "${HOME}/.config/nvim/init.vim"
