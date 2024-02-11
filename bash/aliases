@@ -12,3 +12,9 @@ alias ....='cd ../../../'
 # Other
 alias grep='grep --color=auto'
 alias mkdir='mkdir -p'
+
+# Programs and services
+alias sysbt-start='sudo systemctl start bluetooth.service'
+alias sysbt-stop='sudo systemctl stop bluetooth.service'
+alias sysdck-start='systemctl --user start docker'
+alias sysdck-stop='systemctl --user stop docker'
