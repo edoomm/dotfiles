@@ -1,0 +1,7 @@
+dotfiles_path() { find $HOME/.dotfiles/ -type d -path '*/*' -prune -print; }
+devel_path() { find $HOME/devel -type d -path '*/devel/*' -prune -print; }
+
+project="$((dotfiles_path && devel_path) | fzf)"
+
+cd $project
+tmux new-session -A -s "${PWD##*/}" \; new-window 'nvim .' 
