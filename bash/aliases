@@ -1,7 +1,7 @@
 # Listing
 alias l='ls -CF'
 alias ls='ls --color=auto'
-alias ll='ls -alF'
+alias ll='ls -AlF'
 alias la='ls -A'
 
 # Navigation
