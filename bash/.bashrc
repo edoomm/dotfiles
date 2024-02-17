@@ -14,4 +14,4 @@ parse_git_branch() {
 }
 PS1='\[\e[32m\][\W]\[\e[31m\]$(parse_git_branch)\[\e[00m\]$ '
 
-bind -x '"\C-f":openprj'
+bind -x '"\C-o":openprj'
