@@ -13,3 +13,5 @@ parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 PS1='\[\e[32m\][\W]\[\e[31m\]$(parse_git_branch)\[\e[00m\]$ '
+
+bind -x '"\C-f":openprj'
