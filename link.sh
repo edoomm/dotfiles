@@ -2,7 +2,6 @@
 
 df_path="$(pwd)"
 
-mkdir -p "$HOME/.config/nvim"
 mkdir -p "$HOME/.config/tmux"
 mkdir -p "$HOME/.local/bin"
 
@@ -14,6 +13,6 @@ ln -fs "$df_path/bash/.bash_profile" "${HOME}/.bash_profile" \
 	&& ln -fs "$df_path/config/i3/config" "${HOME}/.config/i3/config" \
 	&& ln -fs "$df_path/config/i3blocks/config" "${HOME}/.config/i3blocks/config" \
 	&& ln -fs "$df_path/config/neofetch/config.conf" "${HOME}/.config/neofetch/config.conf" \
-	&& ln -fs "$df_path/config/nvim/init.vim" "${HOME}/.config/nvim/init.vim" \
+	&& ln -fs "$df_path/config/nvim" "${HOME}/.config" \
 	&& ln -fs "$df_path/config/tmux/tmux.conf" "${HOME}/.config/tmux/tmux.conf" \
 	&& ln -fs "$df_path/bin/openprj" "${HOME}/.local/bin/openprj"
