@@ -1,7 +1,10 @@
 dotfiles_path() { find $HOME/.dotfiles/ -type d -path '*/*' -prune -print; }
+nvim_path() { find $HOME/.dotfiles/config/nvim/ -type d -path '*/*' -prune -print; }
 devel_path() { find $HOME/devel -type d -path '*/devel/*' -prune -print; }
 
-project="$((dotfiles_path && devel_path) | fzf)"
+paths() { dotfiles_path && nvim_path && devel_path; }
+
+project="$(paths | fzf)"
 
 if [[ -n $project ]]; then
 	cd $project
