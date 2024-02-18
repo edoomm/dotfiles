@@ -19,4 +19,10 @@ alias sysbt-stop='sudo systemctl stop bluetooth.service'
 alias sysdck-start='systemctl --user start docker'
 alias sysdck-stop='systemctl --user stop docker'
 
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
+alias vtmux="tmux neww 'nvim .'"
+alias vimtmux="tmux neww 'nvim .'"
+
 tmux() { if [[ $@ == "." ]]; then command tmux new-session -A -s "${PWD##*/}"; else command tmux "$@"; fi; }
