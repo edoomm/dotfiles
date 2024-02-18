@@ -1,1 +1,1 @@
-require("edev")
+require("core")
