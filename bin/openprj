@@ -10,5 +10,25 @@ project="$(paths | fzf)"
 
 if [[ -n $project ]]; then
 	cd $project
-	tmux new-session -A -s "${PWD##*/}" \; new-window 'nvim .' 
+
+	session_name="${PWD##*/}"
+
+	if [[ -f venv/bin/activate ]]; then
+		tmux new-session -A -d -s "$session_name"
+
+		cat $HOME/.bashrc venv/bin/activate > /tmp/$session_name.rc
+
+		tmux set-option -s -t $session_name: \
+			default-command "bash --rcfile /tmp/$session_name.rc"
+
+		tmux new-window -t $session_name 'source venv/bin/activate && nvim .'
+		tmux kill-window -t $session_name:0
+		tmux new-window -t $session_name
+
+		tmux select-window -t $session_name:1
+
+		tmux attach -t $session_name
+	else
+		tmux new-session -A -s "$session_name" \; new-window 'nvim .'
+	fi
 fi
