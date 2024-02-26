@@ -191,3 +191,6 @@ exec_always --no-startup-id $scripts_dir/ctrl2caps.sh
 
 exec --no-startup-id clipmenud
 exec --no-startup-id redshift -P -O 3800
+
+exec --no-startup-id dunst
+exec --no-startup-id $scripts_dir/displayupdates.sh
