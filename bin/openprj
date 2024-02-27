@@ -12,9 +12,13 @@ project="$(paths | fzf)"
 if [[ -n $project ]]; then
 	cd $project
 
-	session_name="${PWD##*/}"
+	dir_name="${PWD##*/}"
+	# Removing '.' character
+	session_name="${dir_name//.}"
 
-	if [[ -f venv/bin/activate ]]; then
+	if (( "$(tmux ls | grep $session_name | wc -l)" != "0" )); then
+		tmux attach -t "$session_name"
+	elif [[ -f venv/bin/activate ]]; then
 		tmux new-session -A -d -s "$session_name"
 
 		cat $HOME/.bashrc venv/bin/activate > /tmp/$session_name.rc
