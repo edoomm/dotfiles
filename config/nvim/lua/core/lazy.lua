@@ -39,13 +39,8 @@ local plugins = {
 		"folke/tokyonight.nvim", lazy = false,
 		priority = 1000, opts = {},
 	},
-	{
-		"gaoDean/autolist.nvim",
-		ft = { "markdown", "text", "tex", "plaintex", "norg", },
-	},
-	{
-		'kkoomen/vim-doge', build = ':call doge#install()'
-	},
+	{ "gaoDean/autolist.nvim", ft = { "markdown", }, },
+	{ 'kkoomen/vim-doge', build = ':call doge#install()', },
 }
 
 require("lazy").setup(plugins)
