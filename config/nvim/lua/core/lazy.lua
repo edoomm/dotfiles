@@ -43,6 +43,9 @@ local plugins = {
 		"gaoDean/autolist.nvim",
 		ft = { "markdown", "text", "tex", "plaintex", "norg", },
 	},
+	{
+		'kkoomen/vim-doge', build = ':call doge#install()'
+	},
 }
 
 require("lazy").setup(plugins)
