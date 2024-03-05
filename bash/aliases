@@ -19,6 +19,9 @@ alias sysbt-stop='sudo systemctl stop bluetooth.service'
 alias sysdck-start='systemctl --user start docker'
 alias sysdck-stop='systemctl --user stop docker'
 
+alias disable-lockscreen="pkill xss-lock && xset -dpms"
+alias enable-lockscreen="xss-lock --transfer-sleep-lock -- i3lock -n -c 000000 -p win -e -f && xset +dpms dpms 0 480 480"
+
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
