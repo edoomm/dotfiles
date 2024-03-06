@@ -1,5 +1,5 @@
 local function get_relative_path()
-	return vim.fn.expand('%:h') .. "/"
+	return vim.fn.expand('%:h')
 end
 local function get_buffer_name()
 	return vim.api.nvim_buf_get_name(0)
@@ -7,9 +7,9 @@ end
 
 require('lualine').setup {
   options = {
-    icons_enabled = true,
-    theme = 'onedark',
-    component_separators = { left = '', right = ''},
+    icons_enabled = false,
+    theme = 'codedark',
+    component_separators = { left = '/', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {
       statusline = {},
@@ -27,9 +27,9 @@ require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {get_relative_path},
+    lualine_c = {get_relative_path, 'buffers'},
     lualine_x = {},
-    lualine_y = {'buffers'},
+    lualine_y = {},
     lualine_z = {'location'}
   },
   inactive_sections = {
