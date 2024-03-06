@@ -41,6 +41,7 @@ local plugins = {
 	},
 	{ "gaoDean/autolist.nvim", ft = { "markdown", }, enabled=false, },
 	{ 'kkoomen/vim-doge', build = ':call doge#install()', },
+	{ 'tpope/vim-fugitive', },
 }
 
 require("lazy").setup(plugins)
