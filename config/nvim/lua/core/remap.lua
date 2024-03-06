@@ -12,5 +12,5 @@ vim.keymap.set("n", "<Tab>", vim.cmd.bnext)
 vim.keymap.set("n", "<S-Tab>", vim.cmd.bprevious)
 
 vim.keymap.set("n", "<leader>br", function()
-	vim.cmd("%bd|e#|bd#")
+	vim.cmd("%bd|e#")
 end)
