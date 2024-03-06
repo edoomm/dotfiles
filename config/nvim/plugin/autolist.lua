@@ -1,3 +1,7 @@
+if not vim.g.loaded_autolist then
+  return
+end
+
 require("autolist").setup()
 
 vim.keymap.set("i", "<CR>", "<CR><cmd>AutolistNewBullet<cr>")
