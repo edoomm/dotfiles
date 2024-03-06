@@ -24,7 +24,6 @@ alias enable-lockscreen="xss-lock --transfer-sleep-lock -- i3lock -n -c 000000 -
 
 alias v='nvim'
 alias vi='nvim'
-alias vim='nvim'
 alias vtmux="tmux neww 'nvim .'"
 alias vimtmux="tmux neww 'nvim .'"
 
