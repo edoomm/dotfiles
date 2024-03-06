@@ -4,6 +4,7 @@ df_path="$(pwd)"
 
 mkdir -p "$HOME/.config/tmux"
 mkdir -p "$HOME/.local/bin"
+mkdir -p "$HOME/.config/dunst"
 
 ln -fs "$df_path/bash/.bash_profile" "${HOME}/.bash_profile" \
 	&& ln -fs "$df_path/bash/.bashrc" "${HOME}/.bashrc" \
@@ -15,4 +16,5 @@ ln -fs "$df_path/bash/.bash_profile" "${HOME}/.bash_profile" \
 	&& ln -fs "$df_path/config/neofetch/config.conf" "${HOME}/.config/neofetch/config.conf" \
 	&& ln -fs "$df_path/config/nvim" "${HOME}/.config" \
 	&& ln -fs "$df_path/config/tmux/tmux.conf" "${HOME}/.config/tmux/tmux.conf" \
-	&& ln -fs "$df_path/bin/openprj" "${HOME}/.local/bin/openprj"
+	&& ln -fs "$df_path/bin/openprj" "${HOME}/.local/bin/openprj" \
+	&& ln -fs "$df_path/config/dunstrc" "${HOME}/.config/dunst/dunstrc" \
