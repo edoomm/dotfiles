@@ -42,7 +42,13 @@ local plugins = {
 	{ "gaoDean/autolist.nvim", ft = { "markdown", }, enabled=false, },
 	{ 'kkoomen/vim-doge', build = ':call doge#install()', },
 	{ 'tpope/vim-fugitive', },
-	{ 'nvim-lualine/lualine.nvim', }
+	{ 'nvim-lualine/lualine.nvim', },
+	{
+		'numToStr/Comment.nvim', lazy = false,
+		config = function ()
+			require("Comment").setup()
+		end,
+	},
 }
 
 require("lazy").setup(plugins)
