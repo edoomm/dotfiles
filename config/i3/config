@@ -194,3 +194,5 @@ exec --no-startup-id redshift -P -O 3800
 
 exec --no-startup-id dunst
 exec --no-startup-id $scripts_dir/displayupdates.sh
+
+exec --no-startup-id thunderbird --headless

@@ -14,5 +14,5 @@ interval=60
 
 # Date Time
 [time]
-command=date '+%m-%d %H:%M:%S'
+command=date '+%m-%d %H:%M:%S'; [[ -z "${BLOCK_BUTTON}" ]] || restart_thunderbird -calendar &
 interval=1
