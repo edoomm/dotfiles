@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Listing
 alias l='ls -CF'
 alias ls='ls --color=auto'
