@@ -49,6 +49,7 @@ local plugins = {
 			require("Comment").setup()
 		end,
 	},
+	{ "folke/todo-comments.nvim", },
 }
 
 require("lazy").setup(plugins)
