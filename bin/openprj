@@ -4,8 +4,9 @@ dotfiles_path() { find $HOME/.dotfiles/ -type d -path '*/*' -prune -print; }
 nvim_path() { find $HOME/.dotfiles/config/nvim/ -type d -path '*/*' -prune -print; }
 devel_path() { find $HOME/devel -type d -path '*/devel/*' -prune -print; }
 notes_path() { find $HOME/.notes/ -type d -path '*/*' -prune -print; }
+binaries_path() { find $HOME/.local/bin/ -type d -path '*/*' -prune -print; }
 
-paths() { dotfiles_path && nvim_path && notes_path && devel_path; }
+paths() { dotfiles_path && nvim_path && notes_path && binaries_path && devel_path; }
 
 project="$(paths | fzf)"
 
