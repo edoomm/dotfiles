@@ -1,0 +1,11 @@
+# Status line
+set -g status-style bg=red
+
+# Copy mode
+setw -g mode-keys vi
+
+# Navigate through panes using hjkl
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
