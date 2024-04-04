@@ -48,7 +48,12 @@ declare -A links_target=(
 	["dunst"]=".config/dunst/dunstrc"
 )
 
-# Check if the option is valid
+if (( "$option" == "all" )); then
+	for key in "${!links_source[@]}"; do
+		link_file "${links_source[$key]}" "${links_target[$key]}"
+	done
+	exit 0
+fi
 if [[ ! ${links_source[$option]} ]]; then
 	echo "Error: Invalid option '$option'. Available options: ${!links_source[@]}"
 	exit 1
