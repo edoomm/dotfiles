@@ -1,6 +1,8 @@
 #!/bin/bash
 
 option="$1"
+device="$2"
+
 df_path="$(pwd)"
 
 mkdir -p "$HOME/.config/tmux"
@@ -8,8 +10,14 @@ mkdir -p "$HOME/.local/bin"
 mkdir -p "$HOME/.config/dunst"
 
 link_file() {
-	source_path="$df_path/$1"
+	# Checking if there is a device argument
+	if [[ -z "$3" ]]; then
+		source_path="$df_path/$1"
+	else
+		source_path="$df_path/$1.$3"
+	fi
 	target_path="$HOME/$2"
+
 	if [ -f "$source_path" ] || [ -d "$source_path" ] ; then
 		ln -fs "$source_path" "$target_path"
 		echo "Linked: $source_path to $target_path"
@@ -48,7 +56,9 @@ declare -A links_target=(
 	["dunst"]=".config/dunst/dunstrc"
 )
 
-if (( "$option" == "all" )); then
+# Handling options
+if [[ -n "$option" ]] && [[ "$option" == "all" ]]; then
+	echo "Linking $option..."
 	for key in "${!links_source[@]}"; do
 		link_file "${links_source[$key]}" "${links_target[$key]}"
 	done
@@ -59,4 +69,5 @@ if [[ ! ${links_source[$option]} ]]; then
 	exit 1
 fi
 
-link_file "${links_source[$option]}" "${links_target[$option]}"
+# Executing link
+link_file "${links_source[$option]}" "${links_target[$option]}" "$device"
