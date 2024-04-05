@@ -39,6 +39,7 @@ declare -A links_source=(
 	["tmux"]="config/tmux/tmux.conf"
 	["openprj"]="bin/openprj"
 	["dunst"]="config/dunstrc"
+	["battery"]="bin/check_battery"
 )
 
 declare -A links_target=(
@@ -54,6 +55,7 @@ declare -A links_target=(
 	["tmux"]=".config/tmux/tmux.conf"
 	["openprj"]=".local/bin/openprj"
 	["dunst"]=".config/dunst/dunstrc"
+	["battery"]=".local/bin/check_battery"
 )
 
 # Handling options

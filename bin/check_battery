@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Daemonize the script
+daemon() {
+	setsid >/dev/null 2>&1
+	umask 027
+	exec disown -h "$BASHPID" >/dev/null 2>&1
+}
+
+trap 'echo "Script exiting..." ; exit 0' HUP INT TERM
+
+# Call the daemon function
+daemon &
+
+while true; do
+	# Check the battery
+	remaining_battery=$(acpi -b | grep Discharging | awk '{print $4}')
+
+	if [[ -n "$remaining_battery" ]] ; then
+		echo "Server unplugged! $remaining_battery remaining battery."
+		echo "Gracefully shutting down..."
+		poweroff
+	else
+		echo "Server plugged."
+	fi
+
+	sleep 8
+done
