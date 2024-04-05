@@ -1,6 +1,16 @@
 # Status line
 set -g status-style bg=red
 
+set -g status-left '#S: '
+
+set -g status-right-length 42
+set -g status-right "\
+#(whoami)@\
+#(hostname) \
+#(uptime | cut -d ' ' -f3-5) \
+#(acpi -b | awk '{print $4}') \
+#(date '+%m-%d %H:%M')"
+
 # Copy mode
 setw -g mode-keys vi
 
