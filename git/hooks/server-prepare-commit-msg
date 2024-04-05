@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Prepending 'SERVER- ' string
+sed -i.bak -e "1s/^/SERVER- /" $1
