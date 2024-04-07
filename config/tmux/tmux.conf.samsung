@@ -1,0 +1,17 @@
+# Status line
+set -g status-style fg=white,bold,bg=green
+
+set -g status-left '#S: '
+set -g status-right "\
+#(whoami)@
+samsung \
+#(date '+%m-%d %H:%M')"
+
+# Copy mode
+setw -g mode-keys vi
+
+# Navigate through panes using hjkl
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
