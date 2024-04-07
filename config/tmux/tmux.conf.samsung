@@ -1,5 +1,5 @@
 # Status line
-set -g status-style fg=white,bold,bg=green
+set -g status-style fg=Navy,bg=green
 
 set -g status-left '#S: '
 set -g status-right "\
