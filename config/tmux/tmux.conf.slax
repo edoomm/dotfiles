@@ -4,7 +4,7 @@ set -g status-style bg=Lime,fg=Black,bold
 set -g status-left '#S: '
 set -g status-right "\
 #(whoami)@
-hostname \
+#(hostname) \
 #(date '+%m-%d %H:%M')"
 
 # Copy mode
