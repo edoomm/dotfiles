@@ -18,8 +18,6 @@ alias mkdir='mkdir -p'
 # Programs and services
 alias sysbt-start='sudo systemctl start bluetooth.service'
 alias sysbt-stop='sudo systemctl stop bluetooth.service'
-alias sysdck-start='systemctl --user start docker'
-alias sysdck-stop='systemctl --user stop docker'
 
 alias disable-lockscreen="pkill xss-lock && xset -dpms"
 alias enable-lockscreen="xss-lock --transfer-sleep-lock -- i3lock -n -c 000000 -p win -e -f && xset +dpms dpms 0 480 480"
@@ -30,3 +28,4 @@ alias vtmux="tmux neww 'nvim .'"
 alias vimtmux="tmux neww 'nvim .'"
 
 tmux() { if [[ $@ == "." ]]; then command tmux new-session -A -s "${PWD##*/}"; else command tmux "$@"; fi; }
+drun() { docker run -it --rm "$1" /bin/bash; }
