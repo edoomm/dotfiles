@@ -175,7 +175,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 
-# Lock screen
+# External monitor
 bindsym XF86WebCam exec --no-startup-id xrandr --output HDMI-1-0 --auto --output eDP-1 --auto --left-of HDMI-1-0
 
 # Screenshots
