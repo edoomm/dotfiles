@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Find the PID of the headless Thunderbird process
+headless_pid=$(pgrep -f "thunderbird --headless")
+
+# If a headless process is found, kill it
+if [[ ! -z "$headless_pid" ]]; then
+    kill "$headless_pid"
+fi
+
+# Launch Thunderbird in the foreground
+thunderbird "$@"
