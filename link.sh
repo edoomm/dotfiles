@@ -40,6 +40,7 @@ declare -A links_source=(
 	["openprj"]="bin/openprj"
 	["dunst"]="config/dunstrc"
 	["battery"]="bin/check_battery"
+	["libinput"]="xserv/40-libinput.conf"
 )
 
 declare -A links_target=(
@@ -56,6 +57,7 @@ declare -A links_target=(
 	["openprj"]=".local/bin/openprj"
 	["dunst"]=".config/dunst/dunstrc"
 	["battery"]=".local/bin/check_battery"
+	["libinput"]="../../usr/share/X11/xorg.conf.d/40-libinput.conf"
 )
 
 # Handling options
