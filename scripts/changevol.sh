@@ -8,7 +8,7 @@ fi
 
 sleep 0.2
 
-volume=$(amixer get Master | awk '$0~/%/{printf("%s - %s", $4, $6)}' | tr -d '[]')
+volume=$(amixer get Master | tail -n 1 | awk '{ print $5, $6 }')
 message="Volume changed to $volume"
 
 notify-send -u normal -c volume-changed -t 500 "$message"
