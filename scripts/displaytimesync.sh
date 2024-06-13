@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Timing out for start up
+sleep 0.8
+
 tdctl_output=$(timedatectl)
 
 sys_clk_sync=$(grep 'System clock synchronized' <<< $tdctl_output)
