@@ -196,8 +196,7 @@ exec --no-startup-id redshift -P -O 3800
 
 exec --no-startup-id dunst
 
-exec_always --no-startup-id $scripts_dir/displayupdates.sh
-exec_always --no-startup-id $scripts_dir/displaytimesync.sh
+exec_always --no-startup-id $scripts_dir/displaysysinfo.sh
 
 exec_always --no-startup-id $scripts_dir/restart_thunderbird --headless
 exec_always --no-startup-id thunderbird --headless
