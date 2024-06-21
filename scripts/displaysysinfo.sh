@@ -2,7 +2,7 @@
 
 num_updates=$(checkupdates | wc -l)
 message_updates=$(
-	echo "System:" && echo "$num_updates updates available"
+	echo "System updates:" && echo "$num_updates available"
 )
 
 # Timing out for start up
