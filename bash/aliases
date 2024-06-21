@@ -27,5 +27,7 @@ alias vi='nvim'
 alias vtmux="tmux neww 'nvim .'"
 alias vimtmux="tmux neww 'nvim .'"
 
+alias dp='f() { cp "$1" "$(dirname "$1")/$2"; }; f';
+
 tmux() { if [[ $@ == "." ]]; then command tmux new-session -A -s "${PWD##*/}"; else command tmux "$@"; fi; }
 drun() { docker run -it --rm "$1" /bin/bash; }
