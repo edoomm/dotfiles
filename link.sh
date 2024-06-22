@@ -42,6 +42,7 @@ declare -A links_source=(
 	["battery"]="bin/check_battery"
 	["libinput"]="xserv/40-libinput.conf"
 	["micvol"]="scripts/changemicvol.sh"
+	["xmodmap"]="xserv/.Xmodmap"
 )
 
 declare -A links_target=(
@@ -60,6 +61,7 @@ declare -A links_target=(
 	["battery"]=".local/bin/check_battery"
 	["libinput"]="../../usr/share/X11/xorg.conf.d/40-libinput.conf"
 	["micvol"]=".local/bin/changemicvol"
+	["xmodmap"]=".Xmodmap"
 )
 
 # Handling options
