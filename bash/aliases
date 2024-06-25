@@ -19,9 +19,6 @@ alias mkdir='mkdir -p'
 alias sysbt-start='sudo systemctl start bluetooth.service'
 alias sysbt-stop='sudo systemctl stop bluetooth.service'
 
-alias disable-lockscreen="pkill xss-lock && xset -dpms"
-alias enable-lockscreen="xss-lock --transfer-sleep-lock -- i3lock -n -c 000000 -p win -e -f && xset +dpms dpms 0 480 480"
-
 alias v='nvim'
 alias vi='nvim'
 alias vtmux="tmux neww 'nvim .'"
