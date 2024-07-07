@@ -1,2 +1,5 @@
 ! Remap backtick to be instantly written
 keycode 51 = braceright bracketright braceright bracketright grave braceright grave braceright braceright bracketright grave braceright
+
+! Remap Ctrl_R to Caps_Lock
+keycode 105 = Caps_Lock NoSymbol Caps_Lock
