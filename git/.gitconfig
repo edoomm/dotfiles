@@ -7,3 +7,5 @@
 [user]
 	name = Eduardo Mendoza
 	email = 57675992+edoomm@users.noreply.github.com
+[push]
+	autoSetupRemote = true
