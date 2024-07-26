@@ -4,6 +4,11 @@ command=$SCRIPT_DIR/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+# RAM
+[memory]
+command=echo "$(free -h | awk '/^Mem:/ {print $3 "/" $2}')"
+interval=60
+
 # Disk
 [disk]
 command=echo "$(df -h / | awk 'NR==2 {print $3 "/" $2 " (" $5 ")"}')"
