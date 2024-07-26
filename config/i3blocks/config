@@ -4,6 +4,11 @@ command=$SCRIPT_DIR/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+# Disk
+[disk]
+command=echo "$(df -h / | awk 'NR==2 {print $3 "/" $2 " (" $5 ")"}')"
+interval=60
+
 # Battery
 [battery]
 command=echo "$(cat /sys/class/power_supply/BAT0/capacity)%"
