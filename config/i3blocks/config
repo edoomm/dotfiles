@@ -9,9 +9,14 @@ markup=none
 command=echo "$(free -h | awk '/^Mem:/ {print $3 "/" $2}')"
 interval=5
 
-# Disk
-[disk]
-command=echo "$(df -h / | awk 'NR==2 {print $3 "/" $2 " (" $5 ")"}')"
+# Disk home
+[disk_home]
+command=echo "/home: $(df -h /home | awk 'NR==2 {print $3 "/" $2 " (" $5 ")"}')"
+interval=10
+
+# Disk root
+[disk_root]
+command=echo "/: $(df -h / | awk 'NR==2 {print $3 "/" $2 " (" $5 ")"}')"
 interval=10
 
 # Battery
