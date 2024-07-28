@@ -11,8 +11,8 @@ interval=5
 
 # Disk home
 [disk_home]
-command=echo "/home: $(df -h /home | awk 'NR==2 {print $3 "/" $2 " (" $5 ")"}')"
-interval=10
+command=echo "/home: $(df -h /home | awk 'NR==2 {print $3 " (" $5 ")"}')"
+interval=5
 
 # Disk root
 [disk_root]
