@@ -50,6 +50,24 @@ local plugins = {
 		end,
 	},
 	{ "folke/todo-comments.nvim", opts = {}, },
+    {
+        "nvimtools/none-ls.nvim", event = "VeryLazy",
+        opts = function()
+            return require "plugin.null-ls"
+        end,
+    },
+    {
+        "windwp/nvim-ts-autotag",
+        ft = {
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+        },
+        config = function()
+            require("nvim-ts-autotag").setup()
+        end
+    },
 }
 
 require("lazy").setup(plugins)
