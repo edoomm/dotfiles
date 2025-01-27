@@ -66,8 +66,18 @@ local plugins = {
         },
         config = function()
             require("nvim-ts-autotag").setup()
-        end
+        end,
     },
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        ---@module "ibl"
+        ---@type ibl.config
+        opts = {},
+        config = function()
+            require("ibl").setup()
+        end,
+    }
 }
 
 require("lazy").setup(plugins)
