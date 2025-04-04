@@ -78,9 +78,6 @@ bindsym $mod+e layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
 # focus the parent container
 bindsym $mod+a focus parent
 
@@ -192,6 +189,9 @@ bindsym Mod4+Shift+S exec --no-startup-id "scrot '/tmp/%F_%T.png' -d 2 -e 'xclip
 
 # Clipboard manager
 bindsym $mod+c exec --no-startup-id clipmenu 
+
+# Change keyboard layout
+bindsym $mod+space exec --no-startup-id $scripts_dir/changekeyboardlayout.sh
 
 # Commands on startup
 exec --no-startup-id clipmenud

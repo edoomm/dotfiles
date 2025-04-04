@@ -19,6 +19,11 @@ interval=5
 command=echo "/: $(df -h / | awk 'NR==2 {print $3 "/" $2 " (" $5 ")"}')"
 interval=10
 
+# Keyboard layout
+[keyboard_layout]
+command=setxkbmap -query | awk '/layout:/ {print $2}'
+interval=1
+
 # Battery
 [battery]
 command=echo "$(cat /sys/class/power_supply/BAT0/capacity)%"
