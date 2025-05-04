@@ -160,9 +160,24 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar
 bar {
-	position top
-        status_command i3blocks
+  position top
+  status_command i3blocks
+
+  colors {
+    background #000000
+    statusline #ffffff
+    separator  #1f1f1f
+
+    focused_workspace  #1e2a38 #1e2a38 #ffffff
+    active_workspace   #1e2a38 #1e2a38 #ffffff
+    inactive_workspace #1e2a38 #1f1f1f #888888
+    urgent_workspace   #ff0000 #ff0000 #ffffff
+    binding_mode       #1e2a38 #1e2a38 #ffffff
+  }
 }
+
+# Color
+client.focused          #1e2a38 #1e2a38 #ffffff #1e2a38 #1e2a38
 
 # Brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
